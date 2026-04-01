@@ -1,0 +1,56 @@
+name: Release Pipeline
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  create-release:
+    name: Создание релиза
+    runs-on: ubuntu-latest
+    steps:
+      - name: Загружаем код
+        uses: actions/checkout@v4
+      
+      - name: Устанавливаем .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.x'
+      
+      - name: Кэшируем NuGet пакеты
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+      
+      - name: Восстанавливаем пакеты
+        run: dotnet restore src/AdvancedCalculator
+      
+      - name: Собираем Release версию
+        run: dotnet build src/AdvancedCalculator --configuration Release --no-restore
+      
+      - name: Очищаем папку публикации
+        run: rm -rf publish
+      
+      - name: Публикуем приложение
+        run: |
+          dotnet publish src/AdvancedCalculator \
+            --configuration Release \
+            --output ./publish \
+            --self-contained false \
+            --no-restore
+      
+      - name: Создаём архив
+        run: |
+          cd publish
+          zip -r ../calculator-${{ github.ref_name }}.zip .
+          cd ..
+      
+      - name: Загружаем артефакты в релиз
+        uses: softprops/action-gh-release@v2
+        with:
+          files: calculator-${{ github.ref_name }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

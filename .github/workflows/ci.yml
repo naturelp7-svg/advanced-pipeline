@@ -1,0 +1,181 @@
+name: Advanced CI Pipeline
+
+on:
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  DOTNET_VERSION: '8.x'
+
+jobs:
+  # Джоба 1: Проверка кода
+  code-quality:
+    name: Качество кода
+    runs-on: ubuntu-latest
+    steps:
+      - name: Загружаем код
+        uses: actions/checkout@v4
+      
+      - name: Устанавливаем .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+      
+      - name: Кэшируем NuGet пакеты
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+      
+      - name: Восстанавливаем пакеты
+        run: dotnet restore
+      
+      - name: Собираем проект
+        run: dotnet build --configuration Release --no-restore
+      
+      - name: Проверяем стиль кода
+        run: dotnet format --verify-no-changes --verbosity diagnostic
+
+  # Джоба 2: Матричная сборка на разных ОС
+  build:
+    name: Сборка - ${{ matrix.os }}
+    needs: code-quality
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - name: Загружаем код
+        uses: actions/checkout@v4
+      
+      - name: Устанавливаем .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+      
+      - name: Кэшируем NuGet пакеты
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+      
+      - name: Восстанавливаем пакеты
+        run: dotnet restore
+      
+      - name: Собираем проект
+        run: dotnet build --configuration Release --no-restore
+      
+      - name: Сохраняем артефакт сборки
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ matrix.os }}
+          path: src/AdvancedCalculator/bin/Release/
+          retention-days: 7
+
+  # Джоба 3: Запуск тестов с покрытием
+  test:
+    name: Тестирование
+    needs: code-quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: Загружаем код
+        uses: actions/checkout@v4
+      
+      - name: Устанавливаем .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+      
+      - name: Кэшируем NuGet пакеты
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+      
+      - name: Запускаем тесты с покрытием
+        run: |
+          dotnet test tests/AdvancedCalculator.Tests \
+            --collect:"XPlat Code Coverage" \
+            --results-directory ./TestResults \
+            --verbosity normal \
+            --configuration Release \
+            -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=cobertura
+      
+      - name: Публикуем результаты тестов
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: TestResults/
+          retention-days: 30
+      
+      - name: Публикуем отчёт о покрытии
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: TestResults/**/coverage.cobertura.xml
+          retention-days: 30
+
+  # Джоба 4: Создание пакета
+  package:
+    name: Создание пакета
+    needs: [build, test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Загружаем код
+        uses: actions/checkout@v4
+      
+      - name: Устанавливаем .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+      
+      - name: Кэшируем NuGet пакеты
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+      
+      - name: Восстанавливаем пакеты
+        run: dotnet restore
+      
+      - name: Создаём NuGet пакет
+        run: dotnet pack src/AdvancedCalculator --configuration Release --output ./packages --no-restore
+      
+      - name: Сохраняем пакеты
+        uses: actions/upload-artifact@v4
+        with:
+          name: nuget-packages
+          path: ./packages/*.nupkg
+          retention-days: 30
+
+  # Джоба 5: Итоговый отчёт
+  report:
+    name: Итоговый отчёт
+    needs: [code-quality, build, test, package]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Генерируем отчёт
+        run: |
+          echo "====================================="
+          echo "✅ CI Pipeline завершён успешно!"
+          echo "====================================="
+          echo ""
+          echo "Выполненные джобы:"
+          echo " - Качество кода"
+          echo " - Сборка на 3 ОС"
+          echo " - Тестирование с покрытием"
+          echo " - Создание NuGet пакета"
+          echo ""
+          echo "Артефакты сохранены и доступны для скачивания"
+          echo "====================================="
