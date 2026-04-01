@@ -1,0 +1,11 @@
+C:\Users\user\AdvancedPipeline\src\AdvancedCalculator\bin\Debug\net8.0\AdvancedCalculator.deps.json
+C:\Users\user\AdvancedPipeline\src\AdvancedCalculator\bin\Debug\net8.0\AdvancedCalculator.dll
+C:\Users\user\AdvancedPipeline\src\AdvancedCalculator\bin\Debug\net8.0\AdvancedCalculator.pdb
+C:\Users\user\AdvancedPipeline\src\AdvancedCalculator\obj\Debug\net8.0\AdvancedCalculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\AdvancedPipeline\src\AdvancedCalculator\obj\Debug\net8.0\AdvancedCalculator.AssemblyInfoInputs.cache
+C:\Users\user\AdvancedPipeline\src\AdvancedCalculator\obj\Debug\net8.0\AdvancedCalculator.AssemblyInfo.cs
+C:\Users\user\AdvancedPipeline\src\AdvancedCalculator\obj\Debug\net8.0\AdvancedCalculator.csproj.CoreCompileInputs.cache
+C:\Users\user\AdvancedPipeline\src\AdvancedCalculator\obj\Debug\net8.0\AdvancedCalculator.dll
+C:\Users\user\AdvancedPipeline\src\AdvancedCalculator\obj\Debug\net8.0\refint\AdvancedCalculator.dll
+C:\Users\user\AdvancedPipeline\src\AdvancedCalculator\obj\Debug\net8.0\AdvancedCalculator.pdb
+C:\Users\user\AdvancedPipeline\src\AdvancedCalculator\obj\Debug\net8.0\ref\AdvancedCalculator.dll

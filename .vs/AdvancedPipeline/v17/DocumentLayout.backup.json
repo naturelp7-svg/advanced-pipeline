@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\AdvancedPipeline\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8A3356D0-F973-480E-8865-8539963FA25E}|tests\\AdvancedCalculator.Tests\\AdvancedCalculator.Tests.csproj|c:\\users\\user\\advancedpipeline\\tests\\advancedcalculator.tests\\statisticscalculatortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A3356D0-F973-480E-8865-8539963FA25E}|tests\\AdvancedCalculator.Tests\\AdvancedCalculator.Tests.csproj|solutionrelative:tests\\advancedcalculator.tests\\statisticscalculatortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A3356D0-F973-480E-8865-8539963FA25E}|tests\\AdvancedCalculator.Tests\\AdvancedCalculator.Tests.csproj|c:\\users\\user\\advancedpipeline\\tests\\advancedcalculator.tests\\calculatortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A3356D0-F973-480E-8865-8539963FA25E}|tests\\AdvancedCalculator.Tests\\AdvancedCalculator.Tests.csproj|solutionrelative:tests\\advancedcalculator.tests\\calculatortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58D3F60F-E10D-4F58-85D8-35098001451D}|src\\AdvancedCalculator\\AdvancedCalculator.csproj|c:\\users\\user\\advancedpipeline\\src\\advancedcalculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58D3F60F-E10D-4F58-85D8-35098001451D}|src\\AdvancedCalculator\\AdvancedCalculator.csproj|solutionrelative:src\\advancedcalculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58D3F60F-E10D-4F58-85D8-35098001451D}|src\\AdvancedCalculator\\AdvancedCalculator.csproj|c:\\users\\user\\advancedpipeline\\src\\advancedcalculator\\statisticscalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58D3F60F-E10D-4F58-85D8-35098001451D}|src\\AdvancedCalculator\\AdvancedCalculator.csproj|solutionrelative:src\\advancedcalculator\\statisticscalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58D3F60F-E10D-4F58-85D8-35098001451D}|src\\AdvancedCalculator\\AdvancedCalculator.csproj|c:\\users\\user\\advancedpipeline\\src\\advancedcalculator\\calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58D3F60F-E10D-4F58-85D8-35098001451D}|src\\AdvancedCalculator\\AdvancedCalculator.csproj|solutionrelative:src\\advancedcalculator\\calculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58D3F60F-E10D-4F58-85D8-35098001451D}|src\\AdvancedCalculator\\AdvancedCalculator.csproj|c:\\users\\user\\advancedpipeline\\src\\advancedcalculator\\advancedcalculator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{58D3F60F-E10D-4F58-85D8-35098001451D}|src\\AdvancedCalculator\\AdvancedCalculator.csproj|solutionrelative:src\\advancedcalculator\\advancedcalculator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StatisticsCalculatorTests.cs",
+              "DocumentMoniker": "C:\\Users\\user\\AdvancedPipeline\\tests\\AdvancedCalculator.Tests\\StatisticsCalculatorTests.cs",
+              "RelativeDocumentMoniker": "tests\\AdvancedCalculator.Tests\\StatisticsCalculatorTests.cs",
+              "ToolTip": "C:\\Users\\user\\AdvancedPipeline\\tests\\AdvancedCalculator.Tests\\StatisticsCalculatorTests.cs",
+              "RelativeToolTip": "tests\\AdvancedCalculator.Tests\\StatisticsCalculatorTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T10:41:45.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CalculatorTests.cs",
+              "DocumentMoniker": "C:\\Users\\user\\AdvancedPipeline\\tests\\AdvancedCalculator.Tests\\CalculatorTests.cs",
+              "RelativeDocumentMoniker": "tests\\AdvancedCalculator.Tests\\CalculatorTests.cs",
+              "ToolTip": "C:\\Users\\user\\AdvancedPipeline\\tests\\AdvancedCalculator.Tests\\CalculatorTests.cs",
+              "RelativeToolTip": "tests\\AdvancedCalculator.Tests\\CalculatorTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T10:41:03.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\AdvancedPipeline\\src\\AdvancedCalculator\\Program.cs",
+              "RelativeDocumentMoniker": "src\\AdvancedCalculator\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\AdvancedPipeline\\src\\AdvancedCalculator\\Program.cs",
+              "RelativeToolTip": "src\\AdvancedCalculator\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T10:39:36.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StatisticsCalculator.cs",
+              "DocumentMoniker": "C:\\Users\\user\\AdvancedPipeline\\src\\AdvancedCalculator\\StatisticsCalculator.cs",
+              "RelativeDocumentMoniker": "src\\AdvancedCalculator\\StatisticsCalculator.cs",
+              "ToolTip": "C:\\Users\\user\\AdvancedPipeline\\src\\AdvancedCalculator\\StatisticsCalculator.cs",
+              "RelativeToolTip": "src\\AdvancedCalculator\\StatisticsCalculator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T10:38:46.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Calculator.cs",
+              "DocumentMoniker": "C:\\Users\\user\\AdvancedPipeline\\src\\AdvancedCalculator\\Calculator.cs",
+              "RelativeDocumentMoniker": "src\\AdvancedCalculator\\Calculator.cs",
+              "ToolTip": "C:\\Users\\user\\AdvancedPipeline\\src\\AdvancedCalculator\\Calculator.cs",
+              "RelativeToolTip": "src\\AdvancedCalculator\\Calculator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T10:37:50.887Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdvancedCalculator.csproj",
+              "DocumentMoniker": "C:\\Users\\user\\AdvancedPipeline\\src\\AdvancedCalculator\\AdvancedCalculator.csproj",
+              "RelativeDocumentMoniker": "src\\AdvancedCalculator\\AdvancedCalculator.csproj",
+              "ToolTip": "C:\\Users\\user\\AdvancedPipeline\\src\\AdvancedCalculator\\AdvancedCalculator.csproj",
+              "RelativeToolTip": "src\\AdvancedCalculator\\AdvancedCalculator.csproj",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-01T10:30:48.626Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
